@@ -1,0 +1,33 @@
+Link Store
+
+Phase 1:
+- DB schema
+	- Table to store links
+		- columns
+			- id type: varchar(36) [it is an uuid 32(hex) + 4(dashes)]
+			- title type: varchar(256)
+			- link type: varchar(2048)
+	- Table to store tags(user can create as many tag as he want)
+		- columns
+			- id type: varchar(36) [it is an uuid 32(hex) + 4(dashes)]
+			- tag type: varchar(128)
+	- Table to store link and tag mapping(user can add many tags to a link)
+		- columns
+			- id type: varchar(36) [it is an uuid 32(hex) + 4(dashes)]
+			- link_id type: varchar(36)
+			- tag_id type: varchar(36)
+	- Table to store thought on a link(user can add many thoughts to a link. but, we will implement for thought for a link)
+		- columns
+			- id type: varchar(36) [it is an uuid 32(hex) + 4(dashes)]
+			- thought type: varchar(4096)
+
+Doubt on max character limit on title and thought column:
+- https://meta.stackexchange.com/a/176447/275180
+
+How long can a hyperlink be?
+- https://stackoverflow.com/a/5761115
+- so, link column datatype can be varchar and its length can be 2k to 4k. but it can also be "text"
+
+Why we need to store each tag mapping as separate?
+- indexing would be easy
+- searching and filtering would be easy

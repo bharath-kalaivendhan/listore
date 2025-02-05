@@ -1,0 +1,30 @@
+What is tagging system?
+- with tags, we can group links and make them easily searchable.
+- finding related links will be easy
+
+Refer:
+- http://howto.philippkeller.com/2005/04/24/Tags-Database-schemas/
+
+Types of tagging:
+- Predefined tags
+- On-demand tags
+
+Predefined tags
+- First, we have to create a tags. (Only insert query)
+- Then, we can map the created tags into links. (mapping query)
+
+On-demand tags
+- While adding a link, user can map link with tags.
+- If a tag is already present, user will get suggested that while user typing.
+- If not it will give a suggestion to add that.
+
+Approach chose: On-demand tags
+- https://stackoverflow.com/a/9385823
+- there will 3 queries
+- insert into tags (Note: unique constraint on tags name column in tags table)
+- delete from link-tag mapping if not present in list
+- insert all into link-tag mapping from list (Note: composite unique constraint on tag_id and link_id column in link-tag mapping table)
+
+Research in tagging
+- Machine learning in content tagging to find similar contents,
+- https://medium.engineering/mapping-mediums-tags-1b9a78d77cf0

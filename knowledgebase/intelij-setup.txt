@@ -1,0 +1,3 @@
+lombok setup:
+- enable annotation processor from compiler in intelij settings
+- install and enable lombok plugin

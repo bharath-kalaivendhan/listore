@@ -1,0 +1,7 @@
+Todo: [Jan-28-2025]
+- Complete all the chose steps for update link_tag_map when creating or updating link.
+
+Todo: [Jan-27-2025]
+- Ensure tag table has unique constrain on name column
+- Create insert multiple rows query with ignore in spring data jpa repository pattern
+- Create api to insert multiple tags at once.
